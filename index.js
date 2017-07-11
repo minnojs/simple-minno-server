@@ -2,8 +2,8 @@ const fs = require('fs');
 const express = require('express');
 const shortid = require('shortid');
 
-const dataFolder = 'data';
-const studyFolder = 'study';
+const dataFolder = __dirname + '/data';
+const studyFolder = __dirname + '/study';
 const app = express();
 
 

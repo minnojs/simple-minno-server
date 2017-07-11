@@ -9,7 +9,7 @@
     },
     "author": "eladzlot",
     "license": "Apache-2.0",
-    "devDependencies": {
+    "dependencies": {
         "express": "^4.15.3",
         "shortid": "^2.2.8"
     }

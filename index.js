@@ -6,8 +6,11 @@ const dataFolder = 'data';
 const studyFolder = 'study';
 const app = express();
 
+
 if (!fs.existsSync(dataFolder)) fs.mkdirSync(dataFolder);
 if (!fs.existsSync(studyFolder)) fs.mkdirSync(studyFolder);
+
+app.set('port', (process.env.PORT || 5000));
 
 // serve static files
 // serve only index.html from root
@@ -22,8 +25,7 @@ app.post('/csv', (req, res) => {
     function uniqueFilename(){ return `${dataFolder}/${shortid.generate()}.csv`; }
 });
 
-app.listen(3000, function () {
-    console.log('Example app listening on port 3000!');
+app.listen(app.get('port'), function() {
+    console.log('MinnoJS is running on port', app.get('port'));
 });
-
 

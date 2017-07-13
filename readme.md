@@ -3,22 +3,26 @@
 This repository serves as a super simple [minnoJS](minnojs.github.io/minno-quest/) server.
 
 ## Installing
-All you need to do is copy the whole repository as is into any [nodejs](service).
-And then install:
+In order to use this server you need to [setup a php server](#setup-a-server) and copy `study`,`index.html` and `csv.php` into your public_html directory.
+You then need to create your study within the study directory.
+Importantly the manager file MUST be named `mgr.js`, and 
+the `postCsv` [setting](https://minnojs.github.io/minno-quest/0.1/manager/API.html#logger) MUST be set to `csv.php` within the manager file.
 
-```
-npm install
-```
+The results of the study will be saved into `res`.
 
-In order to start the server run
+## Setup a server
+You can create and manage a server in any way that you like, this section will show you one easy way to do that.
 
-```
-npm start
-```
+There are many services that offer free hosting of php servers, we will follow the creation of a single study on such a server.
+We will be using [000webhost.com](https://www.000webhost.com/), but you can use any server that you like.
 
-## Creating a study
-In order to create a study you should put all of your static file in the `study` folder.
-You MUST name your manager file `mgr.js` or else it will not be found.
+In your internet browser, go to [000webhost.com](https://www.000webhost.com/), and click **Sign up for free**.
+You will then fill a form asking for your email, password and name of the website.
+Make sure that you remember your password, you will need it again.
 
-## Data
-Each csv logged will be saved with a unique file name into the `data` folder.
+You will now be prompted to set up your server, the instructions are really very good, follow them.
+When the time to **Build your website** comes, click **Upload Own Website**.
+You should then download `index.html` and `csv.php` from this repository and upload them to your server.
+You should then create a `study` folder and copy your files there.
+
+We recomend using [filezilla](https://filezilla-project.org/) as an ftp client.

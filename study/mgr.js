@@ -2,7 +2,7 @@ define(['managerAPI'], function(Manager){
     var API = new Manager();
 
     API.addSettings('onEnd', function(){console.log('end');});
-    API.addSettings('logger', {postCsv:'csv'});
+    API.addSettings('logger', {postCsv:'csv.php'});
 
     API.addSequence([
         {

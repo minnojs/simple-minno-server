@@ -1,6 +1,6 @@
 # simple-minno-server
 
-This repository serves as a super simple [minnoJS](minnojs.github.io/minno-quest/) server.
+This repository serves as a super simple [minnoJS](https://minnojs.github.io/minno-quest/) server.
 It will allow you to go have a Minnojs experiment up and running in no time.
 
 ## Installing
@@ -20,10 +20,10 @@ Web access to the results folder is denied in order to keep the privacy of the p
 ## Setup a server
 There are many ways to setup a php server.
 If you don't know how to set one up yourself, you can ask your IT guy to set one up for you.
-Alternatively, there are many sites that offer php hosting for a fee or even for [free](www.google.co.il/search?q=free+php+hosting).
-For example you might want to try [000webhost.com](000webhost.com) or [x10hosting.com](x10hosting.com).
+Alternatively, there are many sites that offer php hosting for a fee or even for [free](https://www.google.co.il/search?q=free+php+hosting).
+For example you might want to try [000webhost.com](https://000webhost.com) or [x10hosting.com](https://x10hosting.com).
 Hosting services will usually guide you through the process of setting up your server, and give you tools for managing your files.
 
-For local testing you may want to use [WAMP](www.wampserver.com) or [MAMP](www.mamp.info).
+For local testing you may want to use [WAMP](https://www.wampserver.com) or [MAMP](https://www.mamp.info).
 
 Once you have a server set up, managing it consists primarily of copying files around...

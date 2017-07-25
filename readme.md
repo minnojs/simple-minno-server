@@ -17,6 +17,21 @@ The results for each user will be saved into a csv file named according to their
 You can download them using your server's interface or using [ftp](https://en.wikipedia.org/wiki/File_Transfer_Protocol).
 Web access to the results folder is denied in order to keep the privacy of the participants.
 
+The file structure you are aiming at is like so:
+
+```
+.
+├── csv.php
+├── index.html
+└── study
+    ├── mgr.js
+    ├── pip.js
+    └── quest.js
+```
+
+The results folder will be created automatically by the server 
+(it will have an additional file `.htaccess`, don't worry about it, it has to do with the directory permissions).
+
 ## Setup a server
 There are many ways to setup a php server.
 If you don't know how to set one up yourself, you can ask your IT guy to set one up for you.

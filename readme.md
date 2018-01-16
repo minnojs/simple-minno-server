@@ -17,7 +17,7 @@ The results for each user will be saved into a csv file named according to their
 You can download them using your server's interface or using [ftp](https://en.wikipedia.org/wiki/File_Transfer_Protocol).
 Web access to the results folder is denied in order to keep the privacy of the participants.
 
-The file structure you are aiming at is like so:
+The file structure you are aiming for is like so:
 
 ```
 .

@@ -42,3 +42,20 @@ Hosting services will usually guide you through the process of setting up your s
 For local testing you may want to use [WAMP](https://www.wampserver.com) or [MAMP](https://www.mamp.info).
 
 Once you have a server set up, managing it consists primarily of copying files around...
+
+## Trouble shooting
+
+#### Result folder not appearing
+Assuming that you have php set correctly, the most likely cause for this problem is the lack of appropriate permissions for the study folders.
+In order to diagnose this you can check the response that you get from `csv.php`.
+It should not return anything, if you have a problem with permissions it should return something like `Warning: mkdir(): Permission denied`.
+
+Here's what you do in Ubuntu:
+
+1. Make sure all files are owned by the Apache group and user. In Ubuntu it is the **www-data** group and user
+
+    `chown -R www-data:www-data /path/to/your/study
+
+2. Next enabled all members of the www-data group to read and write files
+
+    `chmod -R g+rw  /path/to/your/study

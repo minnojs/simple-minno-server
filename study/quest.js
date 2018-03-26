@@ -1,5 +1,6 @@
 define(['questAPI'], function(Quest){
     var API = new Quest();
+
     API.addSequence([
         {
             questions : {

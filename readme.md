@@ -1,23 +1,27 @@
 # simple-minno-server
 
 This repository serves as a super simple [minnoJS](https://minnojs.github.io/minno-quest/) server.
-It will allow you to go have a Minnojs experiment up and running in no time.
+It will allow you to go have a Minnojs experiment up and running in no time. If you are unfamiliar with minnoJS, spend some time with the [documentation](https://minnojs.github.io/), and then have a look at the example studies that come with the server installation. You will probably want to copy one of the example studies and modify them to create your own study.
+
+Who is likely to be able to use this technology? Any person fearless of technological challenges. If you have any programming experience, or if you know how to setup servers, then it is certain that you will be able to use our server. If you do not have any programming experience and no experience with servers whatsoever, then our tools are probably easy enough to serve as your first experience. However, expect some challenges along the way. First, try to get to the point that you successfully run one of the example experiments on your own server. Look at the saved data and make sure you understand the format. Then, duplicate and modify one of the example experiments to create your own experiment. 
 
 ## Installing
 In order to use this server you need to [setup a php server](#setup-a-server) and copy `index.html`, `csv.php` and `results` into your root directory (usually public_html).
 You then need to give your server write access to `results`.
-This can usually be done from your ftp client
-The easiest way to do this is to change the permissions to allow anyone to write to the directory like so: `chmod 777 results`.
-This solution is **NOT** secure.
-Rather you should set the ownershop of `results` to the apache user.
-This can usually be done by running `sudo chown www-data:www-data results` 
+This can usually be done from your ftp client.
+The easiest way to provide write access to `results` is to change the permissions to allow anyone to write to the `results` directory like so: `chmod 777 results`.
+However, this solution is **NOT** secure.
+
+Therefore, it is recommended that you set the ownershop of `results` to the apache user. 
+How? This can usually be done by running the command `sudo chown www-data:www-data results` 
 (www-data is apache's most common user group, some installation will use a different group and the command must be updated accordingly).
+
 If you want more than one study on your server, you can copy these files into multiple directories, and each will function as an independent study.
 
 Creating your study is simply a matter of creating a `study` directory and uploading your files into it.
 Importantly the manager file MUST be named `mgr.js`. 
-You should NOT set the url in the logger settings of any of your tasks to avoid duplicate posting.
-At the point that you want to post all of your data, add the following task to your manager sequence (in `mgr.js`).
+You should NOT set the url in the logger settings of any of your tasks (in the study code) to avoid duplicate posting.
+When you want to post all of the study data to the server (for recording), add the following task to your manager sequence (in `mgr.js`).
 
 ```javascript
 {

@@ -5,6 +5,13 @@ It will allow you to go have a Minnojs experiment up and running in no time.
 
 ## Installing
 In order to use this server you need to [setup a php server](#setup-a-server) and copy `index.html`, `csv.php` and `results` into your root directory (usually public_html).
+You then need to give your server write access to `results`.
+This can usually be done from your ftp client
+The easiest way to do this is to change the permissions to allow anyone to write to the directory like so: `chmod 777 results`.
+This solution is **NOT** secure.
+Rather you should set the ownershop of `results` to the apache user.
+This can usually be done by running `sudo chown www-data:www-data results` 
+(www-data is apache's most common user group, some installation will use a different group and the command must be updated accordingly).
 If you want more than one study on your server, you can copy these files into multiple directories, and each will function as an independent study.
 
 Creating your study is simply a matter of creating a `study` directory and uploading your files into it.

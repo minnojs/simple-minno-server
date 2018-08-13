@@ -12,7 +12,7 @@ This can usually be done from your ftp client.
 The easiest way to provide write access to `results` is to change the permissions to allow anyone to write to the `results` directory like so: `chmod 777 results`.
 However, this solution is **NOT** secure.
 
-Therefore, it is recommended that you set the ownershop of `results` to the apache user. 
+Therefore, it is recommended that you set the ownership of `results` to the apache user. 
 How? This can usually be done by running the command `sudo chown www-data:www-data results` 
 (www-data is apache's most common user group, some installation will use a different group and the command must be updated accordingly).
 
@@ -36,6 +36,12 @@ The results of the study will be saved into the `results` directory.
 The results for each user will be saved into a csv file named according to their ID (the file names should look something like `7ae528f2a86c448a888fb7e4dfbb6d2c11158d97.csv`).
 You can download them using your server's interface or using [ftp](https://en.wikipedia.org/wiki/File_Transfer_Protocol).
 Web access to the results folder is denied in order to keep the privacy of the participants.
+
+The results files are encoded as [UTF-8](https://en.wikipedia.org/wiki/UTF-8).
+As such, it is capable of saving virtually any language that you choose.
+If you are saving any special characters (read - non English), make sure you that you view your data with a tool capable of reading UTF-8.
+In particular, MS-Excel reads csv as [ANSI](https://en.wikipedia.org/wiki/Windows-1252) by default.
+In order to open a csv file as UTF-8 in excel you may follow [this](https://www.itg.ias.edu/content/how-import-csv-file-uses-utf-8-character-encoding-0) guide.
 
 The file structure you are aiming for is like so:
 

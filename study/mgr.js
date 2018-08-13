@@ -15,7 +15,7 @@ define(['managerAPI'], function(Manager){
             type:'pip', 
             version:0.3,
             scriptUrl:'time.js',
-            baseUrl: 'https://app-prod-03.implicit.harvard.edu/implicit/common/all/js/pip/0.3/dist/js/'
+            baseUrl: '//cdn.jsdelivr.net/gh/minnojs/minno-time@0.3/dist/js'
         },
         {
             type:'postCsv',

@@ -31,6 +31,7 @@ When you want to post all of the study data to the server (for recording), add t
 ```
 
 You can see an [example study](study) in this repository.
+You can use it as a template for your own studies.
 
 The results of the study will be saved into the `results` directory.
 The results for each user will be saved into a csv file named according to their ID (the file names should look something like `7ae528f2a86c448a888fb7e4dfbb6d2c11158d97.csv`).
@@ -56,6 +57,10 @@ The file structure you are aiming for is like so:
     ├── pip.js
     └── quest.js
 ```
+
+A more complex example for a study can be found in the [study.race](study.race) folder.
+This is a minimal replciation of the [Project Implicit](https://implicit.harvard.edu/) Race IAT.
+If you want to run it, you should change the folder name from `study.race` to plain `study`.
 
 ## Setup a server
 There are many ways to setup a php server.

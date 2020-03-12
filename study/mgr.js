@@ -1,26 +1,26 @@
 define(['managerAPI'], function(Manager){
     var API = new Manager();
+    API.addSettings('logger',{type:'csv', url:'csv.php'});
 
     API.addSequence([
         {
             type: 'message',
             keys: ' ',
-            template:'Hello World'
+            template:'Hello World (please click space to proceed)'
         },
         {
+            name:'my-quest',
             type:'quest', 
             scriptUrl:'quest.js'
         },
         {
-            type:'pip', 
-            version:0.3,
+            name:'my-time',
+            type:'time', 
             scriptUrl:'time.js',
-            baseUrl: '//cdn.jsdelivr.net/gh/minnojs/minno-time@0.3/dist/js'
         },
-        {
-            type:'postCsv',
-            url:'csv.php'
-        },
+
+        // this is needed only if you want to post before the end of the study
+        { type:'postCsv', load: console.log },
         {
             type: 'message',
             template:'Debriefing page or something'

@@ -4,6 +4,7 @@ define(['managerAPI'], function(Manager) {
     API.setName('mgr');
     API.addSettings('skip',true);
     API.addSettings('skin','demo');
+    API.addSettings('logger',{type:'csv', url:'csv.php'});
 
     var raceSet = API.shuffle(['a','b'])[0];
     var blackLabels = [];
@@ -26,7 +27,7 @@ define(['managerAPI'], function(Manager) {
     API.addGlobal({
         raceiat:{},
         //YBYB: change when copying back to the correct folder
-        baseURL: './study/images/',
+        baseURL: './study.race/images/',
         raceSet:raceSet,
         blackLabels:blackLabels,
         whiteLabels:whiteLabels,
@@ -55,6 +56,7 @@ define(['managerAPI'], function(Manager) {
     API.addTasksSet({
         instructions: [{
             type: 'message',
+            piTemplate: true,
             buttonText: 'Continue'
         }],
 
@@ -63,7 +65,6 @@ define(['managerAPI'], function(Manager) {
             name: 'realstart',
             templateUrl: 'realstart.jst',
             title: 'Consent',
-            piTemplate: true,
             header: 'Welcome'
         }],
 
@@ -72,7 +73,6 @@ define(['managerAPI'], function(Manager) {
             name: 'raceiat_instructions',
             templateUrl: 'raceiat_instructions.jst',
             title: 'IAT Instructions',
-            piTemplate: true,
             header: 'Implicit Association Test'
         }],
 
@@ -83,9 +83,7 @@ define(['managerAPI'], function(Manager) {
         }],
 
         raceiat: [{
-            type: 'pip',
-            version:0.3,
-            baseUrl: '//cdn.jsdelivr.net/gh/minnojs/minno-time@0.3/dist/js',
+            type: 'time',
             name: 'raceiat',
             scriptUrl: 'raceiat.js'
         }],
@@ -116,13 +114,10 @@ define(['managerAPI'], function(Manager) {
         }],
 
         lastpage: [{
-            type: 'message',
-            name: 'lastpage',
+            inherit: 'instructions',
             templateUrl: 'lastpage.jst',
             title: 'End',
-            piTemplate: true,
             buttonHide: true,
-            last:true,
             header: 'You have completed the study'
         }]
     });
@@ -156,10 +151,7 @@ define(['managerAPI'], function(Manager) {
         },
 
         {inherit: 'debriefing'},
-        {
-            type:'postCsv',
-            url:'csv.php'
-        },
+        { type:'postCsv'},
         {inherit: 'lastpage'}
     ]);
 

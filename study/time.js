@@ -11,7 +11,7 @@ define(['pipAPI'], function(APIconstructor) {
 
             layout: [
                 {
-                    media :{word:'Hello world'},
+                    media :{word:'Hello world (please click space to proceed)'},
                     css:{fontSize:'2em',color:'#D7685A'}
                 }
             ],

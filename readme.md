@@ -21,12 +21,19 @@ If you want more than one study on your server, you can copy these files into mu
 Creating your study is simply a matter of creating a `study` directory and uploading your files into it.
 Importantly the manager file MUST be named `mgr.js`. 
 You should NOT set the url in the logger settings of any of your tasks (in the study code) to avoid duplicate posting.
-When you want to post all of the study data to the server (for recording), add the following task to your manager sequence (in `mgr.js`).
+
+When setting up your task, add the following code to `mgr.js`.
+It tells MinnoJS to keep the data as CSV.
+
+```javascript
+API.addSettings('logger',{type:'csv', url:'csv.php'});
+```
+
+At the point in the sequence in which you want to post all of the study data to the server (for recording), add the following task to your manager sequence (in `mgr.js`).
 
 ```javascript
 {
     type:'postCsv',
-    url:'csv.php'
 }
 ```
 
@@ -54,7 +61,7 @@ The file structure you are aiming for is like so:
 │   └── .htaccess
 └── study
     ├── mgr.js
-    ├── pip.js
+    ├── time.js
     └── quest.js
 ```
 

@@ -3,15 +3,16 @@
 This repository serves as a super simple [minnoJS](https://minnojs.github.io/minno-quest/) server.
 It will allow you to go have a Minnojs experiment up and running in no time. If you are unfamiliar with minnoJS, spend some time with the [documentation](https://minnojs.github.io/), and then have a look at the example studies that come with the server installation. You will probably want to copy one of the example studies and modify them to create your own study.
 
-Who is likely to be able to use this technology? Any person fearless of technological challenges. If you have any programming experience, or if you know how to setup servers, then it is certain that you will be able to use our server. If you do not have any programming experience and no experience with servers whatsoever, then our tools are probably easy enough to serve as your first experience. However, expect some challenges along the way. First, try to get to the point that you successfully run one of the example experiments on your own server. Look at the saved data and make sure you understand the format. Then, duplicate and modify one of the example experiments to create your own experiment. 
+Who is likely to be able to use this technology? Any person ready for an intermediate level technological challenge. If you have any programming experience, or if you know how to setup servers, then it is certain that you will be able to use our server. If you do not have any programming experience and no experience with servers whatsoever, then our tools are probably easy enough to serve as your first experience. However, expect some challenges along the way. First, try to get to the point that you successfully run one of the example experiments on your own server. Look at the saved data and make sure you understand the format. Then, duplicate and modify one of the example experiments to create your own experiment. 
+
+Once you have the server running you will be able to run a full MinnoJS study and save all the data as csv files.
 
 ## Installing
-In order to use this server you need to [setup a php server](#setup-a-server) and copy `index.html`, `csv.php` and `results` into your root directory (usually public_html).
+In order to use this server you need to [setup a php server](#setup-a-server) and copy `index.html` and `csv.php` and `results` into your public directory.
 You then need to give your server write access to `results`.
-This can usually be done from your ftp client.
+This can usually be done from the web interface or your ftp client (if you don't know what an ftp client is, just use the web interface).
 The easiest way to provide write access to `results` is to change the permissions to allow anyone to write to the `results` directory like so: `chmod 777 results`.
 However, this solution is **NOT** secure.
-
 Therefore, it is recommended that you set the ownership of `results` to the apache user. 
 How? This can usually be done by running the command `sudo chown www-data:www-data results` 
 (www-data is apache's most common user group, some installation will use a different group and the command must be updated accordingly).
